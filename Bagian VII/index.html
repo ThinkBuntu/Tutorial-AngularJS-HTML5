@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp">
+<head>
+    <script src="lib/Angular/angular.min.js"></script>
+    <script src="lib/Angular/angular-route.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body ng-controller="mainController">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about"> About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    <p>View the tutorial on Pamungkas Jayuda</p>
+</body>
+</html>

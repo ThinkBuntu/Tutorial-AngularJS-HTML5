@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Guitar App</title>
+    <script type="text/javascript" src="lib/Angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+</head>
+<body>
+    <div class="main" ng-controller="controller">
+        
+         <div>
+            <h1>Data Karyawan</h1>
+            <label>Search</lavel>
+            <input type="text" ng-model="query" >
+
+            <label>Sort by:
+                <select ng-model="orderKaryawan">
+                    <option value="name" selected>name</option>
+                    <option value="reknown">Reknown</option>
+                </select>
+            </label>
+            <br>
+            <label>
+                <input type="radio" ng-model="direction" name="direction" checked>
+                Ascending
+            </label>
+            <label>	
+                <input type="radio" ng-model="direction" name="direction" value="reverse" >
+                Descending
+            </label>
+        </div>
+        <hr>
+        <li class="itemHolder" ng-repeat="item in dataKaryawan  | filter:query | orderBy:orderKaryawan:direction ">
+            <div>
+                <h3>Nama : {{item.name | uppercase }}</h3>
+                <p>Jabatan : {{item.jabatan}}</p>
+                <p>Usia : {{item.usia}}</p>
+            </div>
+        </li>
+    </div>
+</body>
+</html>
